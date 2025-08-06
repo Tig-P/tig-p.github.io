@@ -7,7 +7,7 @@
     <!-- SEO Meta Tags -->
     <title>손익비 계산기 | 주식 리스크 관리</title>
     <meta name="description" content="진입가, 손절가, 목표가를 기반으로 정확한 손익비와 적정 매수 수량을 계산하여, 원칙있는 주식 투자를 돕는 리스크 관리 계산기입니다.">
-    <meta name="keywords" content="손익비, 손익비 계산기, 리스크 관리, 주식 투자, 포지션 사이징, 주식 계산기, 트레이딩, 매매일지">
+    <meta name="keywords" content="주식 평단가, 평단가 계산기, 손익비, 손익비 계산기, 리스크 관리, 주식 투자, 포지션 사이징, 주식 계산기, 물타기 계산, 추가 매수, 트레이딩, 매매일지">
 
     <!-- Open Graph (카카오톡, 페이스북 등 공유) -->
     <meta property="og:type" content="website">
@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>주식 리스크 관리 계산기</h1>
+        <h1>주식 평단가 손익비 계산기</h1>
         <p class="description">매매 진입 전 손익비와 적정 매수 수량을 계산하여 원칙있는 투자를 돕습니다.</p>
 
         <div class="input-group">
@@ -90,6 +90,46 @@
             <p><strong>예상 손실률:</strong> <span id="potential-loss-percent"></span>%</p>
             <p class="highlight"><strong>손익비 (수익:손실):</strong> <span id="risk-reward-ratio"></span></p>
             <div id="trade-advice"></div>
+            <p id="disclaimer" class="small-text" style="margin-top: 15px; text-align: center;"></p>
+        </div>
+
+        <!-- 통합된 추가 매수 및 목표 평단가 계산기 -->
+        <div class="averaging-section">
+            <h2>추가 매수 & 목표 평단가 계산</h2>
+            <p class="description small-text">1차 매수 정보는 위 계산기의 '진입 가격'과 '적정 매수 수량'이 자동으로 사용됩니다. <br><strong>정방향 계산:</strong> 2,3차 정보를 입력하고 '평균가 계산' 클릭 <br><strong>역방향 계산:</strong> 비워둔 한 곳(평단, 가격, 수량)을 계산하려면 '필요정보 역계산' 클릭</p>
+            
+            <div class="input-group">
+                <label for="target-avg-price">목표 / 결과 평균가 (원)</label>
+                <input type="number" id="target-avg-price" placeholder="목표 평단 입력 또는 결과 확인">
+            </div>
+
+            <div class="avg-input-row">
+                <div class="input-group">
+                    <label for="avg-price-2">2차 매수 가격</label>
+                    <input type="number" id="avg-price-2" placeholder="가격">
+                </div>
+                <div class="input-group">
+                    <label for="avg-qty-2">2차 매수 수량</label>
+                    <input type="number" id="avg-qty-2" placeholder="수량">
+                </div>
+            </div>
+
+            <div class="avg-input-row">
+                <div class="input-group">
+                    <label for="avg-price-3">3차 매수 가격</label>
+                    <input type="number" id="avg-price-3" placeholder="가격">
+                </div>
+                <div class="input-group">
+                    <label for="avg-qty-3">3차 매수 수량</label>
+                    <input type="number" id="avg-qty-3" placeholder="수량">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="calculate-avg-btn">평균가 계산</button>
+                <button id="reverse-calculate-btn" class="secondary-btn">필요정보 역계산</button>
+            </div>
+             <button id="apply-avg-btn" class="tertiary-btn hidden">계산된 평균가를 위 계산기에 적용</button>
         </div>
         
         <div class="donation">

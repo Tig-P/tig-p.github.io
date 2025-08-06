@@ -275,3 +275,72 @@ button:hover {
     color: #7f8c8d;
     margin-top: -5px;
 }
+
+/* 통합 추가 매수 섹션 스타일 */
+.averaging-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+}
+
+.averaging-section h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.avg-input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.avg-input-row .input-group {
+    flex: 1;
+    margin-bottom: 0; /* 부모 input-group의 margin-bottom 상쇄 */
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#calculate-avg-btn {
+    background-color: #2ecc71; /* 평균가 계산 버튼 색상 */
+}
+
+#calculate-avg-btn:hover {
+    background-color: #27ae60;
+}
+
+.secondary-btn {
+    background-color: #f39c12; /* 역계산 버튼 색상 */
+}
+
+.secondary-btn:hover {
+    background-color: #e67e22;
+}
+
+.tertiary-btn {
+    background-color: #3498db; /* 적용 버튼 색상 */
+    margin-top: 15px;
+}
+
+.tertiary-btn:hover {
+    background-color: #2980b9;
+}
+
+.hidden {
+    display: none;
+}
